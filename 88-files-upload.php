@@ -1,3 +1,8 @@
+<?php
+        // This file will handle the deleting when "Delete" is pressed.
+        $action_url = $_SERVER['REQUEST_URI'];
+
+?>
 <div class="wrap" style="max-width:950px !important;">
 <h2><?php _e('Upload Files', LYF_DOMAIN); ?></h2>
 <div id="poststuff" style="margin-top:10px;">

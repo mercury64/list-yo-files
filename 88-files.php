@@ -762,9 +762,6 @@ function LYFHandleUploadFilesPage()
 		echo $message;
 	}
 
-	// The file that will handle uploads is this one (see the "if"s above)
-	$action_url = $_SERVER['REQUEST_URI'];
-
 	// Include the settings page here.
 	include('88-files-upload.php');
 }
@@ -788,9 +785,6 @@ function LYFHandleDeleteFilesPage()
 	{
     	wp_die( __( PERMISSIONS_MESAGE, LYF_DOMAIN ) );
   	}
-
-  	// This file will handle the deleting when "Delete" is pressed.
-	$action_url = $_SERVER['REQUEST_URI'];
 
 	// If the "list_files" POST option is set, then the user has requested to see the files in a folder.
 	if ( isset( $_POST['list_files'] ) )

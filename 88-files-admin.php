@@ -1,3 +1,8 @@
+<?php
+        // The file that will handle uploads is this one (see the "if"s above)
+        $action_url = $_SERVER['REQUEST_URI'];
+
+?>
 <div class="wrap" style="max-width:950px !important;">
 <h2><?php _e('Administer', LYF_DOMAIN); ?></h2>
 <div id="poststuff" style="margin-top:10px;">
