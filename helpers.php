@@ -504,7 +504,7 @@ function LYFListFilesToDelete( $filelist, $folder )
 	$output = $files;
 
 	// Encase the ouput in class and ID
-	$retval = '';
+	$retVal = '';
 	$retVal .= '<div id=\'filelist\'>';
 	$retVal .= '<table class="widefat" style="width:710px">
 			<thead>
