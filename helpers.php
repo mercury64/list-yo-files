@@ -363,6 +363,7 @@ function LYFUploadFiles( $folder )
 	
 	// Create a list of uploaded files
 	$uploadedFiles = array();
+	$uploadedCount = 0;
 
 	// There are up to 10 files that can be uploaded yet.
 	foreach ( $_FILES as $file )
@@ -451,7 +452,8 @@ function LYFUploadFiles( $folder )
 		// Send the mail
 		mail( $addresses, $subject, $body, $headers );
 	}
-	
+
+	$uploadedCount = 0;	
 	return $output;
 }
 
