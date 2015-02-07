@@ -561,48 +561,45 @@ function LYFHandleAdminPage()
 
 	if ( isset( $_POST['save_admin_settings'] ) )
 	{
+	  $menuText = isset($_POST['menu_name']) ? $_POST['menu_name'] : '';
+	  $useTableStyles = isset($_POST['on_use_table_styles']) ? $_POST['on_use_table_styles'] : '';
+		$restrictTypes = isset($_POST['on_restrict_types']) ? $_POST['on_restrict_types'] : '';
+		$allowedFileTypes = isset($_POST['file_types']) ? $_POST['file_types'] : '';
+		$enableUserFolders = isset($_POST['on_enable_folders']) ? $_POST['on_enable_folders'] : '';
+		$emailNotifications = isset($_POST['email_notifications']) ? $_POST['email_notifications'] : '';
+		$notificationEmails = isset($_POST['notification_emails']) ? $_POST['notification_emails'] : '';
+		
 		// Security check
 		check_admin_referer( 'filez-nonce' );
 
 		// Save the menu text
-		$menuText = $_POST['menu_name'];
 		update_option( LYF_MENU_TEXT, $menuText );
 
 		// CSS
-		$useTableStyles = $_POST['on_use_table_styles'];
 		update_option( LYF_USE_TABLE_STYLES, $useTableStyles );
 
 		// File types
-		$restrictTypes = $_POST['on_restrict_types'];
 		update_option( LYF_ENABLE_ALLOWED_FILE_TYPES, $restrictTypes );
-
-		$allowedFileTypes = $_POST['file_types'];
 		update_option( LYF_ALLOWED_FILE_TYPES, $allowedFileTypes );
 
 		// Save various user folder options
-		$enableUserFolders = $_POST['on_enable_folders'];
 		update_option( LYF_ENABLE_USER_FOLDERS, $enableUserFolders );
 
 		if ( "on" === $enableUserFolders )
 		{
-			$enableSimpleHelp = $_POST['on_enable_simple_help'];
+			$enableSimpleHelp = isset($_POST['on_enable_simple_help']) ? $_POST['on_enable_simple_help'] : '';
+			$minimumRole = isset($_POST['minimum_role']) ? $_POST['minimum_role'] : '';
+			$subfolderCount = isset($_POST['num_folders']) ? $_POST['num_folders'] : '';
+			$folderSize = isset($_POST['folder_size']) ? $_POST['folder_size'] : '';
+
 			update_option( LYF_ENABLE_SIMPLE_HELP, $enableSimpleHelp );
-
-			$minimumRole = $_POST['minimum_role'];
 			update_option( LYF_MINIMUM_ROLE, $minimumRole );
-
-			$subfolderCount = $_POST['num_folders'];
-			update_option( LYF_USER_SUBFOLDER_LIMIT, $subfolderCount );
-
-			$folderSize = $_POST['folder_size'];
+			update_option( LYF_USER_SUBFOLDER_LIMIT, $subfolderCount );			
 			update_option( LYF_USER_USER_FOLDER_SIZE, $folderSize );
 		}
 
 		// Email notifications
-		$emailNotifications = $_POST['email_notifications'];
 		update_option( LYF_ENABLE_EMAIL_NOTIFICATIONS, $emailNotifications );
-
-		$notificationEmails = $_POST['notification_emails'];
 		update_option( LYF_NOTIFICATION_EMAILS, $notificationEmails );
 
 		echo '<div id="message" class="updated fade">' . __('Successfully saved your settings.', LYF_DOMAIN ) . '</div>';
