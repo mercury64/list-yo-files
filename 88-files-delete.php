@@ -17,8 +17,6 @@ $pluginFolder = get_bloginfo('wpurl') . '/wp-content/plugins/' . dirname( plugin
 
 // Variable to see if subscriber folders is turned ON
 $enableUserFolders = get_option( LYF_ENABLE_USER_FOLDERS );
-
-include_once "information-box.php"
 ?>
 
 <?php

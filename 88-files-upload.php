@@ -24,8 +24,6 @@ if ( empty( $subfolderCount ) )
 
 // What's the size quota?
 $maxFolderSize = get_option( LYF_USER_USER_FOLDER_SIZE );
-
-include_once "information-box.php"
 ?>
 
 <script>

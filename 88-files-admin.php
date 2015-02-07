@@ -14,8 +14,6 @@
 <?php
 wp_nonce_field('filez-nonce');
 $pluginFolder = get_bloginfo('wpurl') . '/wp-content/plugins/' . dirname( plugin_basename( __FILE__ ) ) . '/';
-
-include_once "information-box.php"
 ?>
 
 <div id="listyofiles_admin" class="postbox" style="width:450px">
